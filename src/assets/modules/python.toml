@@ -1,0 +1,6 @@
+name = "Введение в Python"
+dependencies = []
+
+[level.variables]
+name = "Переменные"
+

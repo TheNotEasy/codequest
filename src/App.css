@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url("assets/JetBrainsMono.ttf")
+}
+
+:root {
+  font-family: JetBrainsMono;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: zincscale;
+  -webkit-text-size-adjust: 100%;
+  
+  @apply bg-zinc-900 text-zinc-300 select-none;
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+}
+
+@layer utilities {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
