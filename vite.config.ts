@@ -8,7 +8,7 @@ const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
-  plugins: [react(), tailwindcss(), importMetaUrlPlugin],
+  plugins: [react(), tailwindcss()],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
@@ -31,13 +31,10 @@ export default defineConfig(async () => ({
       ignored: ["**/src-tauri/**"],
     },
   },
-  worker: {
-    format: 'es' as any
-  },
-  optimizeDeps: {
-    exclude: ["monaco-editor"],
-    esbuildOptions: {
-      plugins: [importMetaUrlPlugin]
-    }
-  }
+  // optimizeDeps: {
+  //   // exclude: ["monaco-editor"],
+  //   esbuildOptions: {
+  //     plugins: [importMetaUrlPlugin]
+  //   }
+  // }
 }));

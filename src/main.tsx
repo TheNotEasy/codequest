@@ -6,7 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "./App";
 import Home from "./pages/Home";
 import Modules from "./pages/Modules";
-import Gameplay from "./pages/Gameplay";
+// import Gameplay from './pages/Gameplay';
+
+const importGameplay = () => import("./pages/Gameplay");
 
 let router = createBrowserRouter([
   {
@@ -22,15 +24,18 @@ let router = createBrowserRouter([
         path: "modules",
       },
       {
-        Component: Gameplay,
         path: "gameplay/:id",
+        lazy: importGameplay,
       },
     ],
   },
 ]);
 
+console.log("starting.");
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    {/* <App></App> */}
   </React.StrictMode>
 );

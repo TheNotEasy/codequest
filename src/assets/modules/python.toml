@@ -2,5 +2,5 @@ name = "Введение в Python"
 dependencies = []
 
 [level.variables]
+id = "python.variables"
 name = "Переменные"
-
