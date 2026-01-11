@@ -451,7 +451,7 @@ dependencies = [
 name = "codequest"
 version = "0.1.0"
 dependencies = [
- "pyo3",
+ "pyrunner",
  "serde",
  "serde_json",
  "tauri",
@@ -2771,6 +2771,13 @@ dependencies = [
  "pyo3-build-config",
  "quote",
  "syn 2.0.114",
+]
+
+[[package]]
+name = "pyrunner"
+version = "0.1.0"
+dependencies = [
+ "pyo3",
 ]
 
 [[package]]

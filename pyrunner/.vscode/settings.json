@@ -1,0 +1,4 @@
+{
+    // "python.analysis.extraPaths": ["${workspaceFolder}/assets"]
+    "python.analysis.typeCheckingMode": "strict"
+}

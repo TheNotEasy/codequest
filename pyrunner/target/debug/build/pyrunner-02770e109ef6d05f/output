@@ -1,0 +1,3 @@
+cargo::rerun-if-changed=build.rs
+cargo::rerun-if-changed=assets/modules/checker.py
+cargo::rerun-if-changed=assets/modules/robot.py

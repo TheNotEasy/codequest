@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Modules from "./pages/Modules";
 // import Gameplay from './pages/Gameplay';
 
-const importGameplay = () => import("./pages/Gameplay");
+const importGameplay = React.lazy(() => import("./pages/Gameplay"));
 
 let router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ let router = createBrowserRouter([
       },
       {
         path: "gameplay/:id",
-        lazy: importGameplay,
+        Component: importGameplay,
       },
     ],
   },

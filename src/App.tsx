@@ -2,7 +2,6 @@ import { Outlet } from "react-router";
 import "./App.css";
 import { loader } from "@monaco-editor/react";
 import { Suspense, useEffect, useState } from "react";
-import TasksWorker from "./utils/tasks?worker";
 
 import * as monaco from "monaco-editor";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
@@ -31,7 +30,7 @@ self.MonacoEnvironment = {
 };
 
 function App() {
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     loader.config({ monaco });
@@ -40,7 +39,7 @@ function App() {
         .init(monaco as any)
         .catch(console.error)
         .then(() => {
-          console.log("loaded");
+          setLoaded(true);
         });
     });
   }, []);
@@ -51,7 +50,11 @@ function App() {
       <p className="animate-pulse m-auto">Инициализация pyright сервера...</p>
     );
 
-  return <Outlet></Outlet>;
+  return (
+    <Suspense fallback={<p className="animate-pulse m-auto">Загрузка...</p>}>
+      <Outlet />
+    </Suspense>
+  );
 }
 
 export default App;
